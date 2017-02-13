@@ -1,33 +1,23 @@
 @font-face {
+  font-family: "Roboto";
+  src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype'), url('../fonts/roboto/Roboto-Medium.ttf') format('truetype'), url('../fonts/roboto/Roboto-Bold.ttf') format('truetype'), url('../fonts/roboto/Roboto-Italic.ttf') format('truetype'), url('../fonts/roboto/Roboto-Black.ttf') format('truetype');
+}
+@font-face {
   font-family: "Droid Serif";
-  src: url(../fonts/DroidSerif.ttf) format('truetype'), url(../fonts/DroidSerif-Bold.ttf) format('truetype'), url(../fonts/DroidSerif-BoldItalic.ttf) format('truetype'), url(../fonts/DroidSerif-Italic.ttf) format('truetype');
+  src: url('../fonts/DroidSerif.ttf') format('truetype'), url('../fonts/DroidSerif-Bold.ttf') format('truetype'), url('../fonts/DroidSerif-BoldItalic.ttf') format('truetype'), url('../fonts/DroidSerif-Italic.ttf') format('truetype');
 }
 @font-face {
   font-family: "Kaushan Script";
-  src: url(../fonts/KaushanScript-Regular.ttf) format('truetype');
+  src: url('../fonts/KaushanScript-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url(../fonts/RobotoSlab-Thin.ttf) format('truetype'), url(../fonts/RobotoSlab-Light.ttf) format('truetype'), url(../fonts/RobotoSlab-Regular.ttf) format('truetype'), url(../fonts/RobotoSlab-Bold.ttf) format('truetype');
+  src: url('../fonts/RobotoSlab-Thin.ttf') format('truetype'), url('../fonts/RobotoSlab-Light.ttf') format('truetype'), url('../fonts/RobotoSlab-Regular.ttf') format('truetype'), url('../fonts/RobotoSlab-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: "Montserrat";
-  src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
-  src: url(../fonts/Montserrat-Bold.ttf) format('truetype');
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype'), url('../fonts/Montserrat-Bold.ttf') format('truetype');
 }
-/*font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.script-font() {
-	font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-}
-
-.body-font() {
-	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.heading-font() {
-	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 body {
   overflow-x: hidden;
 }
@@ -181,8 +171,9 @@ fieldset[disabled] .btn-xl.active {
   background-color: rgba(21, 101, 192, 0.5);
 }
 .navbar-default .navbar-brand {
+  font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: bold;
   color: white;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
 }
 .navbar-default .navbar-brand:hover {
   color: #8bc7f8;
@@ -208,7 +199,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: bold;
   letter-spacing: 1px;
   color: white;
 }
@@ -325,6 +316,42 @@ section h3.section-subheading {
   section {
     padding: 150px 0;
   }
+}
+#services .comp-container {
+  display: flex;
+  flex-flow: column;
+}
+#services .comp-container .part {
+  margin-top: 30px;
+}
+#services .comp-container .part:nth-child(1) {
+  margin: 0;
+}
+#services .comp-container .part .part-title {
+  color: #0D47A1;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  border-left: 30px solid;
+  padding: 10px 20px;
+  font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+#services .comp-container .part .comps {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+#services .comp-container .part .comps .comp {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+#services .comp-container .part .comps .comp img {
+  display: flex;
+}
+#services .comp-container .part .comps .comp .comp-title {
+  padding: 10px 0px;
+  font-weight: bold;
 }
 .service-heading {
   margin: 15px 0;

@@ -36,6 +36,7 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'./{,*/}*.html',
+					'./{,*/}*.js',
 					'./stylesheets/{,*/}*.css',
 					'./img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 				]
@@ -53,13 +54,13 @@ module.exports = function (grunt) {
 
 		less: {
 			development: {
-                options: {
-                    paths: ["./less/"],
-                },
-                files: {
-                    "./stylesheets/style.css": "./less/style.less"
-                }
-            },
+				options: {
+					paths: ["./less/"],
+				},
+				files: {
+					"./stylesheets/style.css": "./less/style.less"
+				}
+			},
 		},
 
 	});

@@ -92,10 +92,35 @@ h6 {
     padding: 20px 40px;
 }
 
+.btn {
+    .button-variant(white;
+    @brand-primary;
+    @brand-primary) !important;
+    .heading-font !important;
+    height: auto !important;
+    font-size: 18px !important;
+    padding: 10px 25px !important;
+}
+
+.btn-go-to-competences {
+    .button-variant(white;
+    @brand-primary;
+    @brand-primary) !important;
+    .heading-font !important;
+    height: auto !important;
+    font-size: 25px !important;
+    padding: 10px 25px !important;
+}
+
 // Custom Navigation Bar
 .navbar-default {
     background-color: rgba(21, 101, 192, 0.5);
+    .container {
+        display: flex;
+        align-items: center;
+    }
     .navbar-brand {
+        align-items: center;
         .roboto;
         font-weight: bold;
         color: white;
@@ -109,6 +134,8 @@ h6 {
     }
     .navbar-collapse {
         border-color: fade(white, 2%);
+        // display: flex;
+        flex: 1;
     }
     .navbar-toggle {
         background-color: @brand-primary;
@@ -122,8 +149,14 @@ h6 {
         }
     }
     .nav {
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
         li {
+            display: flex;
             a {
+                display: flex;
+                align-items: center;
                 .heading-font;
                 font-weight: bold;
                 letter-spacing: 1px;
@@ -145,6 +178,34 @@ h6 {
     .navbar-nav>.active>a:focus {
         color: white;
         background-color: darken(@brand-primary, 10%);
+    }
+}
+
+@media(max-width:767px) {
+    .navbar-default {
+        .container {
+            display: inherit;
+        }
+        .navbar-brand {
+            flex: 1;
+        }
+        .nav {
+            display: inherit;
+            li {
+                display: block;
+                a {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar-default {
+        .container {
+			flex-flow: column;
+        }
     }
 }
 
@@ -257,39 +318,34 @@ section {
         display: flex;
         flex-flow: column;
         .part {
-
-			&:nth-child(1) {
-				margin: 0;
-			}
-
-			margin-top: 30px;
-
+            &:nth-child(1) {
+                margin: 0;
+            }
+            margin-top: 30px;
             .part-title {
                 color: @brand-primary;
                 font-size: 20px;
                 font-weight: bold;
                 display: flex;
                 border-left: 30px solid;
-				padding: 10px 20px;
+                padding: 10px 20px;
                 .roboto;
             }
             .comps {
                 display: flex;
                 flex-flow: row wrap;
-				justify-content: space-around;
+                justify-content: space-around;
                 .comp {
                     display: flex;
                     flex-flow: column;
                     align-items: center;
-
-					img {
-						display: flex;
-					}
-
-					.comp-title {
-						padding: 10px 0px;
-						font-weight: bold;
-					}
+                    img {
+                        display: flex;
+                    }
+                    .comp-title {
+                        padding: 10px 0px;
+                        font-weight: bold;
+                    }
                 }
             }
         }
@@ -300,12 +356,6 @@ section {
 .service-heading {
     margin: 15px 0;
     text-transform: none;
-}
-
-#about {
-    background-image: url(../img/beach.jpg);
-    background-repeat: no-repeat;
-    background-position: bottom center;
 }
 
 // Portfolio Section
@@ -379,6 +429,12 @@ section {
     * {
         z-index: 2;
     }
+}
+
+#about {
+    background-image: url(../img/beach.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
 }
 
 @media(min-width:767px) {
@@ -704,75 +760,99 @@ ul.social-buttons {
     outline: none;
 }
 
-.portfolio-modal {
-    .modal-content {
-        border-radius: 0;
-        background-clip: border-box;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border: none;
-        min-height: 100%;
-        padding: 100px 0;
-        text-align: center;
-        h2 {
-            margin-bottom: 15px;
-            font-size: 3em;
-        }
-        p {
-            margin-bottom: 30px;
-        }
-        p.item-intro {
-            margin: 20px 0 30px;
-            .serif-font;
-            font-style: italic;
-            font-size: 16px;
-        }
-        ul.list-inline {
-            margin-bottom: 30px;
-            margin-top: 0;
-        }
-        img {
-            margin-bottom: 30px;
-        }
-    }
-    .close-modal {
-        position: absolute;
-        width: 75px;
-        height: 75px;
-        background-color: transparent;
-        top: 25px;
-        right: 25px;
-        cursor: pointer;
-        &:hover {
-            opacity: 0.3;
-        }
-        .lr {
-            height: 75px;
-            width: 1px;
-            margin-left: 35px;
-            background-color: @gray-darkest;
-            transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            /* IE 9 */
-            -webkit-transform: rotate(45deg);
-            /* Safari and Chrome */
-            z-index: 1051;
-            .rl {
-                height: 75px;
-                width: 1px;
-                background-color: @gray-darkest;
-                transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-                /* IE 9 */
-                -webkit-transform: rotate(90deg);
-                /* Safari and Chrome */
-                z-index: 1052;
-            }
-        }
-    }
-    .modal-backdrop {
-        opacity: 0;
+// .portfolio-modal {
+//     .modal-content {
+//         border-radius: 0;
+//         background-clip: border-box;
+//         -webkit-box-shadow: none;
+//         box-shadow: none;
+//         border: none;
+//         min-height: 100%;
+//         padding: 100px 0;
+//         text-align: center;
+//         h2 {
+//             margin-bottom: 15px;
+//             font-size: 3em;
+//         }
+//         p {
+//             margin-bottom: 30px;
+//         }
+//         p.item-intro {
+//             margin: 20px 0 30px;
+//             .serif-font;
+//             font-style: italic;
+//             font-size: 16px;
+//         }
+//         ul.list-inline {
+//             margin-bottom: 30px;
+//             margin-top: 0;
+//         }
+//         img {
+//             margin-bottom: 30px;
+//         }
+//     }
+//     .close-modal {
+//         position: absolute;
+//         width: 75px;
+//         height: 75px;
+//         background-color: transparent;
+//         top: 25px;
+//         right: 25px;
+//         cursor: pointer;
+//         &:hover {
+//             opacity: 0.3;
+//         }
+//         .lr {
+//             height: 75px;
+//             width: 1px;
+//             margin-left: 35px;
+//             background-color: @gray-darkest;
+//             transform: rotate(45deg);
+//             -ms-transform: rotate(45deg);
+//             /* IE 9 */
+//             -webkit-transform: rotate(45deg);
+//             /* Safari and Chrome */
+//             z-index: 1051;
+//             .rl {
+//                 height: 75px;
+//                 width: 1px;
+//                 background-color: @gray-darkest;
+//                 transform: rotate(90deg);
+//                 -ms-transform: rotate(90deg);
+//                 /* IE 9 */
+//                 -webkit-transform: rotate(90deg);
+//                 /* Safari and Chrome */
+//                 z-index: 1052;
+//             }
+//         }
+//     }
+//     .modal-backdrop {
+//         opacity: 0;
+//         display: none;
+//     }
+// }
+.spinner-container {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    margin-top: 25px;
+    .spinner-sub-container {
         display: none;
+        border-radius: 50px;
+        background-color: white;
+        width: 73px;
+        height: 73px;
+        padding: 22px 20px 20px 20px;
+        .material-icons {
+            display: none;
+            color: green;
+            font-weight: bolder;
+            font-size: 50px;
+            position: relative;
+            right: 9px;
+            bottom: 8px;
+        }
     }
 }
 
